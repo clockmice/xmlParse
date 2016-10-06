@@ -81,7 +81,9 @@ public class Parser {
         while (butikIterator.hasNext()) {
             Point point = new Point(Double.parseDouble(keywordx), Double.parseDouble(keywordy));
             Butik butik = butikIterator.next();
-            if (distanceBetween(point, butik) <= 2.0) {
+            double distance = distanceBetween(point, butik);
+            if (distance <= 2.0) {
+                butik.setDistance(distance);
                 butiks.add(butik);
             }
         }

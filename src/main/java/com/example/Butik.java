@@ -4,6 +4,8 @@ import com.github.goober.coordinatetransformation.positions.RT90Position;
 import com.github.goober.coordinatetransformation.positions.WGS84Position;
 
 import java.awt.*;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Butik {
     private String name;
@@ -12,6 +14,18 @@ public class Butik {
     private Point point;
     private String pointxtest;
     private String pointytest;
+    private String distance;
+
+    public String getDistance() {
+        return distance;
+    }
+
+    public void setDistance(double distance) {
+        BigDecimal bd = new BigDecimal(distance);
+        bd = bd.setScale(1, RoundingMode.HALF_UP);
+        String s = String.valueOf(bd.doubleValue()) + " km away.";
+        this.distance = s;
+    }
 
     public String getPointxtest() {
         String out = "" + point.getCoordinateX();
