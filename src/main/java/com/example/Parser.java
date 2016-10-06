@@ -35,11 +35,9 @@ public class Parser {
             //read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
             doc.getDocumentElement().normalize();
 
-            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+//            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 
             NodeList nList = doc.getElementsByTagName("ButikOmbud");
-
-            System.out.println("----------------------------");
 
             for (int temp = 0; temp < nList.getLength(); temp++) {
 
@@ -98,17 +96,5 @@ public class Parser {
                 butik.getPoint().getCoordinateY());
         return bolaget.distanceTo(location);
     }
-
-//    public List<Butik> getButiks(String keyword) {
-//        List<Butik> butiks = new ArrayList<>();
-//        Iterator<Butik> butikIterator = systembolaget.iterator();
-//        while (butikIterator.hasNext()) {
-//            Butik butik = butikIterator.next();
-//            if (butik.getCity().equals(keyword)) {
-//                butiks.add(butik);
-//            }
-//        }
-//        return butiks;
-//    }
 
 }
