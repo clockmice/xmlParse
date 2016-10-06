@@ -17,7 +17,7 @@ public class ParseController {
 
     @GetMapping("/")
     public ModelAndView search() {
-        return new ModelAndView("search")
+        return new ModelAndView("searchcoord")
                 .addObject("");
     }
 
