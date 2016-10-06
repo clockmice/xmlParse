@@ -30,9 +30,7 @@ public class Butik {
     public void setPoint(double pointX, double pointY) {
         RT90Position rt90Position = new RT90Position(pointX, pointY);
         WGS84Position wgs84Position = rt90Position.toWGS84();
-        Point point = new Point();
-        point.setCoordinateX(wgs84Position.getLatitude());
-        point.setCoordinateY(wgs84Position.getLongitude());
+        Point point = new Point(wgs84Position.getLatitude(), wgs84Position.getLongitude());
         this.point = point;
     }
 

@@ -79,11 +79,9 @@ public class Parser {
         List<Butik> butiks = new ArrayList<>();
         Iterator<Butik> butikIterator = systembolaget.iterator();
         while (butikIterator.hasNext()) {
-            Point point = new Point();
-            point.setCoordinateX(Double.parseDouble(keywordx));
-            point.setCoordinateY(Double.parseDouble(keywordy));
+            Point point = new Point(Double.parseDouble(keywordx), Double.parseDouble(keywordy));
             Butik butik = butikIterator.next();
-            if (distanceBetween(point, butik) < 1.0) {
+            if (distanceBetween(point, butik) <= 2.0) {
                 butiks.add(butik);
             }
         }
